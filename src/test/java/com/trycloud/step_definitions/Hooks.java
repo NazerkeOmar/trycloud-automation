@@ -1,5 +1,5 @@
 package com.trycloud.step_definitions;
-
+import com.trycloud.utilities.BrowserUtils;
 import com.google.common.base.Verify;
 import com.trycloud.pages.LoginPage;
 import com.trycloud.utilities.ConfigurationReader;
@@ -23,6 +23,8 @@ public class Hooks {
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
+
+        BrowserUtils.waitFor(5);
 
         Driver.closeDriver();
     }
