@@ -1,5 +1,6 @@
 package com.trycloud.step_definitions;
 
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -18,6 +19,8 @@ public class Hooks {
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
+
+        BrowserUtils.waitFor(5);
 
         Driver.closeDriver();
     }
