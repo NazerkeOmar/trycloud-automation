@@ -18,4 +18,7 @@ public class LoginPage extends BasePage {
 
     @FindBy(id = "submit-form")
     public WebElement loginBtn;
+
+    @FindBy(xpath = "//p[@class='warning wrongPasswordMsg']")
+    public WebElement warningMessage;
 }

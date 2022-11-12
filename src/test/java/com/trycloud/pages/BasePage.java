@@ -19,6 +19,9 @@ public abstract class BasePage {
     @FindBy(id = "submit-form")
     public WebElement loginBtn;
 
+    @FindBy(xpath = "//a[@aria-label='Files']")
+    public WebElement filesModule;
+
     public void login(){
         Driver.getDriver().get(ConfigurationReader.getProperty("env"));
         username.sendKeys(ConfigurationReader.getProperty("username"));
