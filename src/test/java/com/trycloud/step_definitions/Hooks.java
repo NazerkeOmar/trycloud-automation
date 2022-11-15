@@ -1,9 +1,14 @@
 package com.trycloud.step_definitions;
-
+import com.trycloud.utilities.BrowserUtils;
+import com.google.common.base.Verify;
+import com.trycloud.pages.LoginPage;
+import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -19,15 +24,20 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
 
+        BrowserUtils.waitFor(5);
+
         Driver.closeDriver();
     }
 
     //@Before(value = "@login")
-    public void setupScenario(){
+//    public void setupScenario(){
+//
+//    }
+    //@Before
+//    public void setupScenario(){
+//    }
 
-    }
-
-    //@Before(value = "@login", order=2)
+    //@Before(value = "@login")
     public void setupForLogin(){
         //If you want any code to run before any specific feature
         //you can use value = "@tagname" to determine this
